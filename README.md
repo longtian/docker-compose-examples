@@ -1,2 +1,3 @@
 # docker-compose-demo
-Demo of using docker compose to quicly create applications
+
+Collection of docker compose projects to quickly demo the potential of docker
