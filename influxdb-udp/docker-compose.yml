@@ -10,3 +10,9 @@ influxdb:
   - "4444:4444/udp"
  environment:
   UDP_DB: CPU
+grafana:
+  image: grafana/grafana
+  ports:
+   - "3000:3000"
+  links:
+   - influxdb

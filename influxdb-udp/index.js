@@ -5,9 +5,7 @@ var dgram = require('dgram');
 var socket = dgram.createSocket('udp4');
 function writeLine(str) {
     var buffer = new Buffer(str);
-    socket.send(buffer, 0, buffer.length, 4444, 'influxdb', function () {
-        console.log(arguments);
-    })
+    socket.send(buffer, 0, buffer.length, 4444, 'influxdb')
 }
 
 socket.unref();
@@ -15,5 +13,5 @@ socket.unref();
 setInterval(function () {
     var mem= process.memoryUsage();
     writeLine(`memory rss=${mem.rss},heapTotal=${mem.heapTotal},heapUsed=${mem.heapUsed}`)
-}, 5000)
+}, 300)
 
